@@ -1,0 +1,24 @@
+##bcftools_mergeCommand=merge --file-list /home/octo0410/Alzheimer_script/00.resource/gnomAD/input_v
+ariant_files_genomes.list --output /home/octo0410/gnomad.genomes.v4.0.sites.vcf.bgz; Date=Mon Jan 22
+ 15:14:17 2024
+##bcftools_viewVersion=1.14+htslib-1.11
+##bcftools_viewCommand=view --types snps -m2 -M2 -Oz -o /home/sangbo14/gnomad.genomes.v4.0.biallelic
+.vcf.bgz /data/public/gnomAD/hg38/r4.0/vcf/genomes/gnomad.genomes.v4.0.sites.vcf.bgz; Date=Tue Dec 2
+3 09:00:56 2025
+##bcftools_annotateVersion=1.14+htslib-1.11
+##bcftools_annotateCommand=annotate -x ^INFO/AC_eas,INFO/AF_eas -O z -o /home/sangbo14/00.SANGBO_HOM
+E/22.STEAM_Project/00.SCRIPT/00.resource/gnomad.genomes.v4.0.biallelic.AC_AF_eas_only.vcf.gz /home/s
+angbo14/00.SANGBO_HOME/22.STEAM_Project/00.SCRIPT/00.resource/gnomad.genomes.v4.0.biallelic.vcf.bgz;
+ Date=Sun Jan  4 10:06:55 2026
+#CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO
+chr1    10031   rs1639542312    T       C       .       AC0;AS_VQSR     AC_eas=0;AF_eas=0
+chr1    10037   rs1639542418    T       C       .       AS_VQSR AC_eas=1;AF_eas=0.000407166
+chr1    10043   .       T       C       .       AS_VQSR AC_eas=0;AF_eas=0
+chr1    10055   rs892501864     T       C       .       AS_VQSR AC_eas=0;AF_eas=0
+chr1    10057   rs1570391741    A       C       .       AS_VQSR AC_eas=0;AF_eas=0
+chr1    10061   .       T       C       .       AC0     AC_eas=0;AF_eas=0
+chr1    10109   rs376007522     A       T       .       AC0;AS_VQSR     AC_eas=0;AF_eas=0
+chr1    10111   rs1639546129    C       A       .       PASS    AC_eas=0;AF_eas=0
+chr1    10114   .       T       A       .       AC0;AS_VQSR     AC_eas=0;AF_eas=0
+chr1    10114   rs1570391787    T       C       .       AS_VQSR AC_eas=0;AF_eas=0
+chr1    10116   rs2100298979    A       G       .       AC0;AS_VQSR     AC_eas=0;AF_eas=0

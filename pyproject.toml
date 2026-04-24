@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gprism"
+version = "1.0.0"
+description = "Probabilistic reconstruction of individual genotypes from sequencing mixtures"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [
+    { name = "Sangbo Lee", email = "sangbo14@yuhs.ac" },
+    { name = "Dongwoo Park" },
+    { name = "Taehyeon Kim" },
+    { name = "Sangwoo Kim", email = "swkim@yuhs.ac" },
+]
+keywords = [
+    "DNA mixture deconvolution",
+    "probabilistic genotyping",
+    "expectation-maximization",
+    "contamination detection",
+    "person-of-interest",
+    "forensic genomics",
+    "population allele frequency",
+    "VCF",
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.9",
+    "torch>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/sangbolee/gprism"
+Issues = "https://github.com/sangbolee/gprism/issues"
+
+[project.scripts]
+gprism = "gprism.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["gprism*"]
+exclude = ["tests*"]

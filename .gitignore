@@ -1,0 +1,48 @@
+# Byte-compiled / cached Python files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+wheels/
+*.egg-info/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.python-version
+
+# Test & coverage artefacts
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+
+# Editor / OS cruft
+.DS_Store
+.Rhistory
+.idea/
+.vscode/
+*.swp
+*~
+
+# Runtime outputs (not tracked)
+/tmp_outputs/
+*.Mixture_Results.txt
+*.Membership.txt
+*.biallelic.mpileup
+# Keep test fixtures
+!tests/fixtures/*.biallelic.mpileup
+
+# Large binary / data files
+*.bam
+*.bai
+*.vcf.gz
+*.mpileup.gz
