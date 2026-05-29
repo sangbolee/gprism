@@ -42,6 +42,35 @@ pytest tests/ -v
 
 Requirements: Python ≥ 3.9, NumPy, SciPy, PyTorch ≥ 2.0.
 
+## Demo
+
+The repo ships a deterministic synthetic two-person mixture at
+`tests/fixtures/tiny.biallelic.mpileup` (400 SNPs, depth 200, true mixture
+proportions 0.7 / 0.3) that exercises stages 2–3 of the pipeline end-to-end
+without any external reference data:
+
+```bash
+mkdir -p demo_out
+gprism deconvolve --input tests/fixtures/ --sample tiny \
+    --output demo_out --max-k 3
+gprism genotype --input tests/fixtures/tiny.biallelic.mpileup \
+    --mixture-results demo_out/tiny.Mixture_Results.txt \
+    --sample tiny --output demo_out --mode posterior
+```
+
+Expected output:
+
+* `demo_out/tiny.Mixture_Results.txt` — BIC is minimised at `K=2`
+  (≈ 3452 vs. ≈ 8247 for K=1 and ≈ 3526 for K=3), with recovered mixture
+  proportions ≈ `0.69, 0.31` (true values 0.70, 0.30).
+* `demo_out/tiny.Membership.txt` — 400 rows of per-locus posterior
+  probability triplets `(ref, hetero, homo)` for each of the two
+  contributors.
+
+Expected wall-clock on an Apple M-series laptop (CPU only, fresh venv):
+`pip install -e .` ≈ 14 s, `gprism deconvolve` ≈ 2 s, `gprism genotype`
+≈ 0.5 s — total demo runtime ≈ 3 s after installation.
+
 ### Generating the input mpileup
 
 gPRISM takes per-sample gzip-compressed mpileup files
